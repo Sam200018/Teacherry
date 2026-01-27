@@ -11,7 +11,10 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -25,6 +28,14 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
+            implementation(project.dependencies.platform(libs.koin.bom))
+            // Koin modules (no versions needed)
+            implementation(libs.koin.core)
+
+            implementation(project(":shared:features:login-registration:di"))
+            implementation(project(":shared:features:login-registration:domain"))
+            implementation(project(":shared:features:login-registration:presentation"))
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
