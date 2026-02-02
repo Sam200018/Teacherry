@@ -1,3 +1,10 @@
+### System Documentation
+
+
+This is a system to help the primary school teachers on Mexico to manage their group and their student's grades. Its goal is to simplify the administrative responsibilities, allowing the teachers to have digital control for the students' attendance and academic performance.
+For detailed system documentation and additional resources, see the Microsoft-hosted document:
+[System documentation (Microsoft)](https://home.microsoftpersonalcontent.com/:fl:/g/contentstorage/CSP_3913052a-3df8-439a-b9f5-ee268b2a573d/IQK-5bFjrfRhSK5GfnVzg_dEAcqriKoKcdLYqBVb01OgMAs?e=BFND4p&nav=cz0lMkZjb250ZW50c3RvcmFnZSUyRkNTUF8zOTEzMDUyYS0zZGY4LTQzOWEtYjlmNS1lZTI2OGIyYTU3M2QmZD1iIUtnVVRPZmc5bWtPNTllNG1peXBYUFhmaWN2bDlTbnhBdmlFSFR4dDZxMUxPRXFxQXlUSDRUNEtXLXV3WEI3OEEmZj0wMVFWRERGQzU2NFdZV0hMUFVNRkVLNFJUNk9WWllINTJFJmM9JTJGJmZsdWlkPTEmYT1Mb29wQXBwJnA9JTQwZmx1aWR4JTJGbG9vcC1wYWdlLWNvbnRhaW5lciZ4PSU3QiUyMnclMjIlM0ElMjJUMFJUVUh4b2IyMWxMbTFwWTNKdmMyOW1kSEJsY25OdmJtRnNZMjl1ZEdWdWRDNWpiMjE4WWlGTFoxVlVUMlpuT1cxclR6VTVaVFJ0YVhsd1dGQllabWxqZG13NVUyNTRRWFpwUlVoVWVIUTJjVEZNVDBWeGNVRjVWRWcwVkRSTFZ5MTFkMWhDTnpoQmZEQXhVVlpFUkVaRE5GUTNXalpNVVV0UFRUWmFTREpUVWpWQ1JsTkpURWhUUWtZJTNEJTIyJTJDJTIyaSUyMiUzQSUyMmY4NTBlZmJmLTgzNDYtNDA0Mi1iMDE4LWY3MTg1MGYzZjkzYyUyMiU3RA%3D%3D)
+
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
