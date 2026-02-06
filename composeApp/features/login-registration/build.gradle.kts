@@ -60,4 +60,5 @@ android {
 }
 dependencies {
     implementation(project(":composeApp:shared_resources"))
+    debugImplementation(compose.uiTooling)
 }

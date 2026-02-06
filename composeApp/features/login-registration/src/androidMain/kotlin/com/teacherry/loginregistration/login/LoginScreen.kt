@@ -1,4 +1,4 @@
-package com.teacherry.features.`login-registration`.login
+package com.teacherry.loginregistration.login
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.teacherry.loginregistration.presentation.login.LoginIntent
 import com.teacherry.loginregistration.presentation.login.LoginViewModel
 import com.teacherry.sharedresources.R.*
 import org.koin.compose.viewmodel.koinViewModel
@@ -30,9 +31,17 @@ import org.koin.compose.viewmodel.koinViewModel
          * @param loginViewModel
          */
 fun LoginScreen(modifier: Modifier = Modifier, loginViewModel: LoginViewModel = koinViewModel()) {
-    LoginScreenImpl {
-        loginViewModel.onLogin()
-    }
+    LoginScreenImpl(
+        onChangeEmail = { email ->
+            loginViewModel.handleIntent(LoginIntent.OnEmailChange(email))
+        },
+        onChangePassword = { password ->
+            loginViewModel.handleIntent(LoginIntent.OnPasswordChange(password))
+        },
+        onLoginWithCredentials = {
+            loginViewModel.handleIntent(LoginIntent.OnLoginWithCredentials)
+        }
+    )
 }
 
 /**
@@ -40,11 +49,15 @@ fun LoginScreen(modifier: Modifier = Modifier, loginViewModel: LoginViewModel = 
  *
  * This composable is kept parameterized so it can be previewed and tested without the ViewModel.
  *
- * @param onLogin callback invoked when the user taps the login button.
+ * @param onLoginWithCredentials callback invoked when the user taps the login button.
  */
 @Composable
-fun LoginScreenImpl(onLogin: () -> Unit = {}) {
-    Scaffold() {
+fun LoginScreenImpl(
+    onChangeEmail: (String) -> Unit = {},
+    onChangePassword: (String) -> Unit = {},
+    onLoginWithCredentials: () -> Unit = {}
+) {
+    Scaffold {
         Box(Modifier.padding(it)) {
             Column(
                 Modifier.fillMaxSize(),
@@ -55,16 +68,20 @@ fun LoginScreenImpl(onLogin: () -> Unit = {}) {
                 Spacer(Modifier.height(40.dp))
                 TextField(
                     value = "",
-                    onValueChange = {},
+                    onValueChange = { email ->
+                        onChangeEmail(email)
+                    },
                     label = { Text(stringResource(string.login_registration_login_email_label)) })
                 Spacer(Modifier.height(20.dp))
                 TextField(
                     value = "",
-                    onValueChange = {},
+                    onValueChange = { password ->
+                        onChangePassword(password)
+                    },
                     label = { Text(stringResource(string.login_registration_login_password_label)) })
                 Spacer(Modifier.height(20.dp))
                 OutlinedButton(onClick = {
-                    onLogin()
+                    onLoginWithCredentials()
                 }) {
                     Text(stringResource(string.login_registration_login_button_label))
                 }
@@ -74,7 +91,7 @@ fun LoginScreenImpl(onLogin: () -> Unit = {}) {
 }
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun LoginScreenPrev() {
     LoginScreenImpl()

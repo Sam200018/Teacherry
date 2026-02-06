@@ -1,3 +1,11 @@
+package com.teacherry.loginregistration.domain.login
+
+
 interface LoginRepository {
-    suspend fun login(): String
+    /**
+     * Authenticates the user using their credentials.
+     *
+     * @return A string representing the authentication result or token.
+     */
+    suspend fun loginWithCredentials(): String
 }

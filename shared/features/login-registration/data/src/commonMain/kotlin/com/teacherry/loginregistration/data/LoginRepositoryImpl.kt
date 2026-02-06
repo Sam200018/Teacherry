@@ -1,12 +1,15 @@
 package com.teacherry.loginregistration.data
 
-import LoginRepository
-import kotlinx.coroutines.delay
+import com.teacherry.loginregistration.domain.login.LoginRepository
 
 class LoginRepositoryImpl : LoginRepository {
-    override suspend fun login(): String {
-        delay(2000)
-
+    /**
+     * Executes the login process using credentials.
+     * Currently, this provides a mock implementation returning a placeholder string.
+     *
+     * @return A string representing the login result or mock token.
+     */
+    override suspend fun loginWithCredentials(): String {
         return "Hi module"
     }
 }
