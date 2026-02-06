@@ -30,6 +30,7 @@ dependencyResolutionManagement {
 
 include(":composeApp")
 include(":composeApp:features:login-registration")
+include(":composeApp:shared_resources")
 include(":shared")
 include(":shared:features:login-registration:data")
 include(":shared:features:login-registration:domain")

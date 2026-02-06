@@ -12,6 +12,5 @@ class MainApplication : Application() {
             androidContext(this@MainApplication)
             androidLogger()
         }
-
     }
 }
