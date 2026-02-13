@@ -32,7 +32,6 @@ kotlin {
             // Koin modules (no versions needed)
             implementation(libs.koin.core)
 
-            implementation(project(":shared:features:login-registration:di"))
             implementation(project(":shared:features:login-registration:domain"))
             implementation(project(":shared:features:login-registration:presentation"))
 
