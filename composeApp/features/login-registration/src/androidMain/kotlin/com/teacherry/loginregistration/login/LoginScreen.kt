@@ -32,15 +32,13 @@ import org.koin.compose.viewmodel.koinViewModel
          */
 fun LoginScreen(modifier: Modifier = Modifier, loginViewModel: LoginViewModel = koinViewModel()) {
     LoginScreenImpl(
-        onChangeEmail = { email ->
-            loginViewModel.handleIntent(LoginIntent.OnEmailChange(email))
+        onEvent = { event ->
+            when (event) {
+                is LoginIntent.OnEmailChange -> loginViewModel.onEmailChange(event.email)
+                is LoginIntent.OnPasswordChange -> loginViewModel.onPasswordChange(event.password)
+                is LoginIntent.OnLoginWithCredentials -> loginViewModel.loginWithCredentials()
+            }
         },
-        onChangePassword = { password ->
-            loginViewModel.handleIntent(LoginIntent.OnPasswordChange(password))
-        },
-        onLoginWithCredentials = {
-            loginViewModel.handleIntent(LoginIntent.OnLoginWithCredentials)
-        }
     )
 }
 
@@ -53,9 +51,8 @@ fun LoginScreen(modifier: Modifier = Modifier, loginViewModel: LoginViewModel = 
  */
 @Composable
 fun LoginScreenImpl(
-    onChangeEmail: (String) -> Unit = {},
-    onChangePassword: (String) -> Unit = {},
-    onLoginWithCredentials: () -> Unit = {}
+    onEvent: (LoginIntent) -> Unit,
+
 ) {
     Scaffold {
         Box(Modifier.padding(it)) {
@@ -69,19 +66,19 @@ fun LoginScreenImpl(
                 TextField(
                     value = "",
                     onValueChange = { email ->
-                        onChangeEmail(email)
+                        onEvent(LoginIntent.OnEmailChange(email))
                     },
                     label = { Text(stringResource(string.login_registration_login_email_label)) })
                 Spacer(Modifier.height(20.dp))
                 TextField(
                     value = "",
                     onValueChange = { password ->
-                        onChangePassword(password)
+                        onEvent(LoginIntent.OnPasswordChange(password))
                     },
                     label = { Text(stringResource(string.login_registration_login_password_label)) })
                 Spacer(Modifier.height(20.dp))
                 OutlinedButton(onClick = {
-                    onLoginWithCredentials()
+                        onEvent(LoginIntent.OnLoginWithCredentials)
                 }) {
                     Text(stringResource(string.login_registration_login_button_label))
                 }
@@ -94,5 +91,5 @@ fun LoginScreenImpl(
 @Preview(showBackground = true)
 @Composable
 private fun LoginScreenPrev() {
-    LoginScreenImpl()
+    LoginScreenImpl() {}
 }
