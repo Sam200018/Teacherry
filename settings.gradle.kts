@@ -29,4 +29,10 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":composeApp:features:login-registration")
+include(":composeApp:shared_resources")
 include(":shared")
+include(":shared:features:login-registration:data")
+include(":shared:features:login-registration:domain")
+include(":shared:features:login-registration:presentation")
+include(":shared:features:login-registration:di")
