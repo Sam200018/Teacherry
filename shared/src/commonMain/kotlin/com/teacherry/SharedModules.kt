@@ -11,3 +11,7 @@ fun initKoin(config: KoinAppDeclaration? = null) {
         modules(loginModule)
     }
 }
+
+fun initKoinIos() {
+    initKoin()
+}
