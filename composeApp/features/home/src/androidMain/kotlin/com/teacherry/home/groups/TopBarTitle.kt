@@ -11,23 +11,28 @@ import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.teacherry.sharedresources.R
 import ui.theme.primaryContainerLight
 import ui.theme.primaryTextLight
 
 @Composable
-fun TopBarTitle(modifier: Modifier = Modifier) {
-    Row(modifier.fillMaxWidth().padding(top = 32.dp, bottom = 16.dp)) {
+fun TopBarTitle(name: String) {
+
+    Row(Modifier
+        .fillMaxWidth()
+        .padding(top = 32.dp, bottom = 16.dp)) {
         Column() {
             Text(
-                text = "Bienvenida",
+                text = stringResource(R.string.home_screen_welcome_title),
                 color = primaryContainerLight,
                 style = typography.titleSmall
             )
             Text(
-                text = "¡Hola, Samuel Bautista!",
+                text = stringResource(R.string.home_screen_welcome_name, name),
                 style = typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 color = primaryTextLight
@@ -42,5 +47,5 @@ fun TopBarTitle(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 private fun TopBarTitlePrev() {
-    TopBarTitle(modifier = Modifier)
+    TopBarTitle( "Tomas")
 }

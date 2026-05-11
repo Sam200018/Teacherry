@@ -1,9 +1,7 @@
 package ui.components
 
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -17,7 +15,7 @@ import com.teacherry.sharedresources.R
 @Composable
 fun ImageTecherry(
     modifier: Modifier = Modifier,
-    data: String = "https://cdn.milenio.com/uploads/media/2021/05/15/frases-para-el.jpg",
+    data: String
 ) {
     AsyncImage(
         model = ImageRequest.Builder(LocalContext.current)
@@ -28,7 +26,7 @@ fun ImageTecherry(
         placeholder = painterResource(R.drawable.holder),
         contentDescription = "description",
         contentScale = ContentScale.Crop,
-        modifier = modifier.clip(CircleShape),
+        modifier = modifier,
     )
 }
 
@@ -36,5 +34,5 @@ fun ImageTecherry(
 @Preview(showBackground = true)
 @Composable
 private fun ImageTecherryPrev() {
-    ImageTecherry()
+    ImageTecherry(data = "https://cdn.milenio.com/uploads/media/2021/05/15/frases-para-el-dia-del.jpg")
 }

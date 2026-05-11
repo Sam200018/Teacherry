@@ -23,6 +23,7 @@ kotlin {
             implementation(compose.material3)
             implementation(libs.compose.ui.text.google.fonts)
             implementation(libs.compose.coil)
+            implementation(libs.compose.coil.network.okhttp)
             implementation(compose.preview)
         }
         commonMain.dependencies {

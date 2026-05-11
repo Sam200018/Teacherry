@@ -7,5 +7,16 @@
     <string name="login_registration_loading_label">Loading...</string>
     <string name="login_registration_error_label">Error</string>
 
+<!--Home Scree-->
+    <string  name="home_screen_welcome_title">Bienvenido</string>
+    <string  name="home_screen_welcome_name">¡Hola, %s!</string>
+    <string  name="home_screen_my_groups">Mis grupos</string>
+    <string  name="home_screen_new_group">Nuevo</string>
+    <string  name="home_screen_group_active_status">Activo</string>
+    <string  name="home_screen_group_members">Miembros: %s</string>
+    <string  name="home_screen_group_enter_label">Entrar</string>
+    <string  name="home_screen_groups_list_end">Delice hacia abajo para actualizar la lista</string>
+
+
 
 </resources>
