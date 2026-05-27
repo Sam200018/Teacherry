@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("co.touchlab.skie") version "0.10.11"
 }
 
 kotlin {
@@ -21,7 +22,7 @@ kotlin {
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "Shared"
-            isStatic = true
+            isStatic = false
         }
     }
     
@@ -34,6 +35,7 @@ kotlin {
 
             implementation(project(":shared:features:login-registration:domain"))
             implementation(project(":shared:features:login-registration:presentation"))
+            implementation(project(":shared:features:login-registration:di"))
 
         }
         commonTest.dependencies {

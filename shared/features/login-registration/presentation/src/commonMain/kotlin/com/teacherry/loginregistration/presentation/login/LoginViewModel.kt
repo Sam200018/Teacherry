@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 /**
@@ -54,7 +55,20 @@ class LoginViewModel(
      */
     fun loginWithCredentials() {
         viewModelScope.launch {
-            loginRepository.loginWithCredentials()
+            _uiState.update {
+                it.copy(
+                    isLoading = true
+                )
+            }
+
+            val result = loginRepository.loginWithCredentials()
+            _uiState.update {
+                it.copy(
+                    isLoading = false,
+                    isSuccessful = true,
+                    message = "$result: ${_uiState.value.email}"
+                )
+            }
         }
     }
 }
