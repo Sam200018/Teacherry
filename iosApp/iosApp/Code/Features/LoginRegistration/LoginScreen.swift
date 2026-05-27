@@ -16,9 +16,9 @@ struct LoginScreen: View {
 
     var body: some View {
         VStack {
-            Text("Login Screen")
+            Text(String(localized: "login_registration_login_button_label"))
             Spacer().frame(height: 40)
-            TextField("Email", text: $email).onChange(
+            TextField(String(localized: "login_registration_login_email_label"), text: $email).onChange(
                 of: email,
                 { _, newValue in
                     loginObservable.updateState(loginIntent: PresentationLoginIntent.OnEmailChange(email: newValue))
@@ -27,7 +27,7 @@ struct LoginScreen: View {
 
             Spacer().frame(height: 20)
 
-            TextField("Password", text: $password).onChange(
+            TextField(String(localized: "login_registration_login_password_label"), text: $password).onChange(
                 of: password,
                 { _, newValue in
                     loginObservable.updateState(loginIntent: PresentationLoginIntent.OnPasswordChange(password: newValue))
@@ -37,15 +37,15 @@ struct LoginScreen: View {
             )
 
             Spacer().frame(height: 20)
-            Button("Login") {
+            Button(String(localized: "login_registration_login_button_label")) {
                 loginObservable.updateState(loginIntent: PresentationLoginIntent.OnLoginWithCredentials())
             }.buttonStyle(.bordered)
             
             if(loginObservable.loginUiState.isLoading) {
-                Text("Loading...")
+                Text(String(localized: "login_registration_loading_label"))
             }
             if(loginObservable.loginUiState.isError) {
-                Text("Error")
+                Text(String(localized: "login_registration_error_label"))
             }
             if(loginObservable.loginUiState.isSuccessful) {
                 Text(loginObservable.message!)
