@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 
 struct HomeScreen: View {
+    var name: String = "Sam"
     
     var body: some View {
         ScrollView {
-           TopBarTitle()
+           TopBarTitle(name: name)
             GroupsFilter()
             ForEach(0..<4) { _ in
                 GroupItemView()
@@ -25,7 +26,7 @@ struct HomeScreen: View {
 struct ListEnd: View {
     var body: some View {
         VStack(alignment: .center) {
-            Text("Delice hacia abajo para actualizar la lista")
+            Text(.homeScreenGroupsListEnd)
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.secondary)
                 .padding(.top, 16)

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct TopBarTitle: View {
+    let name: String
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Bienvenida")
+                Text(.homeScreenWelcomeTitle)
                     .font(.title3)
                     .foregroundColor(Color("PrimaryContainerLight"))
-                Text("¡Hola, Samuel Bautista!")
+                Text(.homeScreenWelcomeName(name: name))
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color("PrimaryTextLight"))
@@ -31,5 +33,5 @@ struct TopBarTitle: View {
 }
 
 #Preview {
-    TopBarTitle()
+    TopBarTitle(name: "Samuel")
 }

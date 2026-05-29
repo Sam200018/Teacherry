@@ -39,7 +39,7 @@ fun ListEnd(modifier: Modifier = Modifier) {
             text = stringResource(R.string.home_screen_groups_list_end),
             style = MaterialTheme.typography.titleSmall,
             color = outlineLight,
-            modifier = modifier.padding(top = 16.dp, bottom = 32.dp)
+            modifier = Modifier.padding(top = 16.dp, bottom = 32.dp)
         )
     }
 }

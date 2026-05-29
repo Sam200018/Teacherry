@@ -11,7 +11,7 @@ struct GroupItemView: View {
     var body: some View {
         HStack(spacing: 0) {
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color("PrimaryContainer"))
+                .fill(Color("PrimaryContainerLight"))
                 .frame(width: 8)
 
             VStack(alignment: .leading, spacing: 16) {
@@ -50,7 +50,7 @@ struct GroupInfoView: View {
 
                 Spacer()
 
-                Text("ACTIVO")
+                Text(.homeScreenGroupActiveStatus)
                     .font(.caption)
                     .fontWeight(.bold)
                     .foregroundStyle(Color("PrimaryContainerLight"))
@@ -63,13 +63,13 @@ struct GroupInfoView: View {
             HStack {
                 Label("",systemImage: "person.fill")
                     .foregroundStyle(Color("PrimaryContainerLight"))
-                Text("100 miembros")
+                Text(.homeScreenGroupMembers(membersNumber: 30) )
 
                 Spacer()
 
                 Button(action: {}) {
                     HStack(spacing: 4) {
-                        Text("Entrar")
+                        Text(String(localized: "home_screen_group_enter_label"))
                         Image(systemName: "chevron.right")
                     }
                     .foregroundStyle(Color.white)

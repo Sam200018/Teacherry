@@ -23,8 +23,8 @@ private struct GroupsFilterButton: View {
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: "info.circle")
-                .foregroundColor(.primaryContainerLight)
-            Text("Mis grupos")
+                .foregroundColor(Color("PrimaryContainerLight"))
+            Text(.homeScreenMyGroups)
                 .font(.system(size: 16, weight: .medium))
         }
         .padding(.vertical, 16)
@@ -35,10 +35,10 @@ private struct NewGroupButton: View {
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: "plus.circle")
-                .foregroundColor(.primaryContainerLight)
-            Text("Nuevo")
+                .foregroundColor(Color("PrimaryContainerLight"))
+            Text(.homeScreenNewGroup)
                 .font(.system(size: 16, weight: .medium))
-                .foregroundColor(.primaryContainerLight)
+                .foregroundColor(Color("PrimaryContainerLight"))
         }
     }
 }

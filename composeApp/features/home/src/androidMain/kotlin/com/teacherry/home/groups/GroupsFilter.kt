@@ -32,7 +32,7 @@ fun GroupsFilter(modifier: Modifier = Modifier) {
 @Composable
 private fun GroupsFilterButton(modifier: Modifier = Modifier) {
     Row(Modifier.padding(vertical = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-        Icon(Icons.Outlined.Info, contentDescription = "Filter", tint = primaryContainerLight)
+        Icon(Icons.Outlined.Info, contentDescription = stringResource(R.string.home_screen_my_groups), tint = primaryContainerLight)
         Spacer(modifier = Modifier.width(8.dp))
         Text(text = stringResource(R.string.home_screen_my_groups), style = MaterialTheme.typography.titleMedium )
     }
@@ -41,7 +41,7 @@ private fun GroupsFilterButton(modifier: Modifier = Modifier) {
 @Composable
 private fun NewGroupButton(){
     Row {
-        Icon(Icons.Outlined.AddCircle, contentDescription = "Filter", tint = primaryContainerLight)
+        Icon(Icons.Outlined.AddCircle, contentDescription = stringResource(R.string.home_screen_new_group), tint = primaryContainerLight)
         Spacer(modifier = Modifier.width(8.dp))
         Text(text = stringResource(R.string.home_screen_new_group), style = MaterialTheme.typography.titleMedium, color = primaryContainerLight)
     }

@@ -9,7 +9,8 @@ struct iOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginScreen(loginObservable: LoginObservableViewModel())
+//            LoginScreen(loginObservable: LoginObservableViewModel())
+            HomeScreen()
         }
     }
 }

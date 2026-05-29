@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,17 +26,19 @@ fun TopBarTitle(name: String) {
     Row(Modifier
         .fillMaxWidth()
         .padding(top = 32.dp, bottom = 16.dp)) {
-        Column() {
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
             Text(
                 text = stringResource(R.string.home_screen_welcome_title),
-                color = primaryContainerLight,
+                color = MaterialTheme.colorScheme.primaryContainer,
                 style = typography.titleSmall
             )
             Text(
                 text = stringResource(R.string.home_screen_welcome_name, name),
                 style = typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                color = primaryTextLight
+                color = MaterialTheme.colorScheme.secondary
             )
         }
         Icon(
