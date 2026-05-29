@@ -32,26 +32,35 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.teacherry.sharedresources.R
 import ui.components.ImageTecherry
-import ui.theme.onSurfaceVariantLight
-import ui.theme.primaryContainerLight
-import ui.theme.secondaryLight
 
+/**
+ * Displays a group card with a cover image, basic group information, status, and an enter action.
+ *
+ * @param modifier Modifier applied to the card container.
+ * @param groupName Name displayed for the group.
+ * @param groupDescription Short description displayed below the group name.
+ */
 @Composable
-fun GroupItem(groupName: String = "Group name", groupDescription: String = "Group description") {
+fun GroupItem(
+    modifier: Modifier = Modifier,
+    groupName: String = "Group name",
+    groupDescription: String = "Group description"
+) {
     Card(
         colors = CardDefaults.cardColors(
             containerColor = Color.White,
-        ), shape = RoundedCornerShape(20.dp), modifier = Modifier.padding(vertical = 8.dp)
+        ), shape = RoundedCornerShape(20.dp), modifier = modifier.padding(vertical = 8.dp)
     ) {
         Row(modifier = Modifier
             .fillMaxWidth()
-            .height(IntrinsicSize.Min)) {
+            .height(IntrinsicSize.Min))
+        {
             Box(
                 modifier = Modifier
                     .width(8.dp)
                     .fillMaxHeight()
                     .background(
-                        color = primaryContainerLight,
+                        color = MaterialTheme.colorScheme.primaryContainer,
                         shape = RoundedCornerShape(topStart = 20.dp, bottomStart = 20.dp)
                     )
             )
@@ -65,27 +74,41 @@ fun GroupItem(groupName: String = "Group name", groupDescription: String = "Grou
                     data = "https://cdn.milenio.com/uploads/media/2021/05/15/frases-para-el-dia-del.jpg"
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-                GroupInfo(groupName, groupDescription)
+                GroupInfo(groupName = groupName, groupDescription = groupDescription)
+                Spacer(modifier = Modifier.height(16.dp))
+                GroupMembersEnterCTA()
             }
         }
     }
 }
 
+/**
+ * Shows the textual details and actions for a group, including its status, member count,
+ * and a button to enter the group.
+ *
+ * @param groupName Name displayed for the group.
+ * @param groupDescription Short description displayed below the group name.
+ */
+
 @Composable
-private fun GroupInfo(groupName: String = "Group name", groupDescription: String = "Group description") {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        Column() {
+private fun GroupInfo(
+    modifier: Modifier = Modifier,
+    groupName: String = "Group name",
+    groupDescription: String = "Group description"
+) {
+    Row(modifier,verticalAlignment = Alignment.CenterVertically) {
+        Column {
             Text(text = groupName, style = MaterialTheme.typography.titleLarge)
             Text(
                 text = groupDescription,
                 style = MaterialTheme.typography.bodyLarge,
-                color = onSurfaceVariantLight
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
         Spacer(modifier = Modifier.weight(1f))
         Text(
             text = stringResource(R.string.home_screen_group_active_status),
-            color = primaryContainerLight,
+            color = MaterialTheme.colorScheme.primaryContainer,
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.bodySmall,
             modifier = Modifier
@@ -94,20 +117,30 @@ private fun GroupInfo(groupName: String = "Group name", groupDescription: String
         )
 
     }
-    Spacer(modifier = Modifier.height(16.dp))
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        Icon(Icons.Default.Person, contentDescription = "Members", tint = primaryContainerLight)
-        Text(text = stringResource(R.string.home_screen_group_members,"10"))
+}
+
+
+@Composable
+fun GroupMembersEnterCTA(modifier: Modifier = Modifier) {
+    Row(modifier,
+        verticalAlignment = Alignment.CenterVertically) {
+        Icon(Icons.Default.Person, contentDescription = "Members", tint = MaterialTheme.colorScheme.primaryContainer)
+        Text(text = stringResource(R.string.home_screen_group_members, "10"))
         Spacer(modifier = Modifier.weight(1f))
         Button(
-            onClick = {},
-            colors = ButtonDefaults.buttonColors(containerColor = primaryContainerLight)
+            onClick = {
+                //TODO: Implement enter group action
+            },
+            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
         ) {
-            Text(text = stringResource(R.string.home_screen_group_enter_label), color = secondaryLight)
+            Text(
+                text = stringResource(R.string.home_screen_group_enter_label),
+                color = MaterialTheme.colorScheme.secondary
+            )
             Icon(
                 Icons.Default.KeyboardArrowRight,
                 contentDescription = "Enter group",
-                tint = secondaryLight
+                tint = MaterialTheme.colorScheme.secondary
             )
         }
     }

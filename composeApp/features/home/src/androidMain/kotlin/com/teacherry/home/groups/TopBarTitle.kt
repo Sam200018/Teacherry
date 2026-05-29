@@ -17,15 +17,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.teacherry.sharedresources.R
-import ui.theme.primaryContainerLight
-import ui.theme.primaryTextLight
 
 @Composable
 fun TopBarTitle(name: String) {
-
-    Row(Modifier
-        .fillMaxWidth()
-        .padding(top = 32.dp, bottom = 16.dp)) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .padding(top = 32.dp, bottom = 16.dp)
+    ) {
         Column(
             modifier = Modifier.weight(1f)
         ) {
