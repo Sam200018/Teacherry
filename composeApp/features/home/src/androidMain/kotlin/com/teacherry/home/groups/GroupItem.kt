@@ -29,9 +29,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.teacherry.sharedresources.R
 import ui.components.ImageTecherry
+import ui.theme.Dimensions
 
 /**
  * Displays a group card with a cover image, basic group information, status, and an enter action.
@@ -49,7 +49,7 @@ fun GroupItem(
     Card(
         colors = CardDefaults.cardColors(
             containerColor = Color.White,
-        ), shape = RoundedCornerShape(20.dp), modifier = modifier.padding(vertical = 8.dp)
+        ), shape = RoundedCornerShape(Dimensions.spacing20), modifier = modifier.padding(vertical = Dimensions.spacing8)
     ) {
         Row(modifier = Modifier
             .fillMaxWidth()
@@ -57,25 +57,25 @@ fun GroupItem(
         {
             Box(
                 modifier = Modifier
-                    .width(8.dp)
+                    .width(Dimensions.spacing8)
                     .fillMaxHeight()
                     .background(
                         color = MaterialTheme.colorScheme.primaryContainer,
-                        shape = RoundedCornerShape(topStart = 20.dp, bottomStart = 20.dp)
+                        shape = RoundedCornerShape(topStart = Dimensions.spacing20, bottomStart = Dimensions.spacing20)
                     )
             )
             Column(modifier = Modifier
                 .weight(1f)
-                .padding(16.dp)) {
+                .padding(Dimensions.spacing16)) {
                 ImageTecherry(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(96.dp),
+                        .height(Dimensions.spacing96),
                     data = "https://cdn.milenio.com/uploads/media/2021/05/15/frases-para-el-dia-del.jpg"
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(Dimensions.spacing8))
                 GroupInfo(groupName = groupName, groupDescription = groupDescription)
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(Dimensions.spacing16))
                 GroupMembersEnterCTA()
             }
         }
@@ -113,7 +113,7 @@ private fun GroupInfo(
             style = MaterialTheme.typography.bodySmall,
             modifier = Modifier
                 .background(Color(0xFFE7F8EA), RoundedCornerShape(50))
-                .padding(horizontal = 16.dp, vertical = 8.dp)
+                .padding(horizontal = Dimensions.spacing16, vertical = Dimensions.spacing8)
         )
 
     }

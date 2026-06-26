@@ -16,8 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.teacherry.sharedresources.R
+import ui.theme.Dimensions
 
 /**
  * Top-level row that shows the groups filter UI for the home screen.
@@ -48,13 +48,13 @@ fun GroupsFilter(modifier: Modifier = Modifier) {
  */
 @Composable
 private fun GroupsFilterButton(modifier: Modifier = Modifier) {
-    Row(modifier.padding(vertical = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+    Row(modifier.padding(vertical = Dimensions.spacing16), verticalAlignment = Alignment.CenterVertically) {
         Icon(
             Icons.Outlined.Info,
             contentDescription = stringResource(R.string.home_screen_my_groups),
             tint = MaterialTheme.colorScheme.primaryContainer
         )
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(Dimensions.spacing8))
         Text(
             text = stringResource(R.string.home_screen_my_groups),
             style = MaterialTheme.typography.titleMedium
@@ -76,7 +76,7 @@ private fun NewGroupButton() {
             contentDescription = stringResource(R.string.home_screen_new_group),
             tint = MaterialTheme.colorScheme.primaryContainer
         )
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(Dimensions.spacing8))
         Text(
             text = stringResource(R.string.home_screen_new_group),
             style = MaterialTheme.typography.titleMedium,
