@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,6 +23,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         item {
             GroupsFilter()
         }
+        // TODO: update with the actual list of items
         items (4) {
             GroupItem()
         }
@@ -33,7 +35,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun ListEnd(modifier: Modifier = Modifier) {
-    Box(contentAlignment = androidx.compose.ui.Alignment.Center, modifier = modifier.fillMaxWidth()) {
+    Box(contentAlignment = Alignment.Center, modifier = modifier.fillMaxWidth()) {
         Text(
             text = stringResource(R.string.home_screen_groups_list_end),
             style = MaterialTheme.typography.titleSmall,

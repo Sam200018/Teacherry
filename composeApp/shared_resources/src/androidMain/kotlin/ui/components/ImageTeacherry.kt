@@ -20,10 +20,10 @@ fun ImageTecherry(
     AsyncImage(
         model = ImageRequest.Builder(LocalContext.current)
             .data(data)
-            .placeholder(R.drawable.holder)
+            .placeholder(R.drawable.imageholder)
             .crossfade(true)
             .build(),
-        placeholder = painterResource(R.drawable.holder),
+        placeholder = painterResource(R.drawable.imageholder),
         contentDescription = "description",
         contentScale = ContentScale.Crop,
         modifier = modifier,

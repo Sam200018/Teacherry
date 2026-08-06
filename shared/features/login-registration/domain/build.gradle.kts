@@ -11,12 +11,12 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 // Only pure Kotlin logic and Coroutines
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test"))
+                implementation(libs.kotlin.test)
             }
         }
     }

@@ -49,5 +49,5 @@ fun TopBarTitle(name: String) {
 @Preview(showBackground = true)
 @Composable
 private fun TopBarTitlePrev() {
-    TopBarTitle( "Tomas")
+    TopBarTitle("Tomas")
 }
