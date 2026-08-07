@@ -27,8 +27,10 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.koin.compose)
             implementation(libs.koin.android)
-            implementation(libs.koin.compose.viewmodel)
+            implementation (libs.compose.material.icons)
+
             implementation(project(":composeApp:features:login-registration"))
+            implementation(project(":composeApp:features:home"))
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -75,6 +77,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":composeApp:shared_resources"))
     debugImplementation(compose.uiTooling)
 }
 

@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">Teacherry</string>
-    <string name="login_registration_login_title">Login Screen</string>
+    <string name="login_registration_login_title">Inicio de sesión</string>
     <string name="login_registration_login_email_label">Email</string>
-    <string name="login_registration_login_password_label">Password</string>
-    <string name="login_registration_login_button_label">Login</string>
-    <string name="login_registration_loading_label">Loading...</string>
+    <string name="login_registration_login_password_label">Contraseña</string>
+    <string name="login_registration_login_button_label">Iniciar sesión</string>
+    <string name="login_registration_loading_label">Cargando...</string>
     <string name="login_registration_error_label">Error</string>
 
+<!--Home Screen-->
+    <string  name="home_screen_welcome_title">Bienvenido</string>
+    <string  name="home_screen_welcome_name">¡Hola, %s!</string>
+    <string  name="home_screen_my_groups">Mis grupos</string>
+    <string  name="home_screen_new_group">Nuevo</string>
+    <string  name="home_screen_group_active_status">Activo</string>
+    <string  name="home_screen_group_members">Miembros: %s</string>
+    <string  name="home_screen_group_enter_label">Entrar</string>
+    <string  name="home_screen_groups_list_end">Deslice hacia abajo para actualizar la lista</string>
 
 </resources>

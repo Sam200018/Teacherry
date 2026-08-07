@@ -14,16 +14,23 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
+    iosX64(); iosArm64(); iosSimulatorArm64()
 
     sourceSets {
         androidMain.dependencies {
+
+            // Koin for DI
+            implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.bundles.composeBasics)
-            implementation(libs.bundles.coil)
+            implementation(libs.bundles.viewModel)
+            implementation(libs.bundles.koin)
+
         }
     }
 }
+
 android {
-    namespace = "com.teacherry.sharedresources"
+    namespace = "com.teacherry.features.home"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -32,9 +39,8 @@ android {
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+}
+dependencies {
+    implementation(project(":composeApp:shared_resources"))
+    debugImplementation(compose.uiTooling)
 }

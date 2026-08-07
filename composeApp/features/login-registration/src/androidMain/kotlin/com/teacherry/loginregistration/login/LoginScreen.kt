@@ -16,11 +16,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.teacherry.loginregistration.presentation.login.LoginIntent
 import com.teacherry.loginregistration.presentation.login.LoginViewModel
 import com.teacherry.sharedresources.R.*
 import org.koin.compose.viewmodel.koinViewModel
+import ui.theme.Dimensions
 
 @Composable
 
@@ -62,21 +62,21 @@ fun LoginScreenImpl(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(stringResource(string.login_registration_login_title))
-                Spacer(Modifier.height(40.dp))
+                Spacer(Modifier.height(Dimensions.spacing40))
                 TextField(
                     value = "",
                     onValueChange = { email ->
                         onEvent(LoginIntent.OnEmailChange(email))
                     },
                     label = { Text(stringResource(string.login_registration_login_email_label)) })
-                Spacer(Modifier.height(20.dp))
+                Spacer(Modifier.height(Dimensions.spacing20))
                 TextField(
                     value = "",
                     onValueChange = { password ->
                         onEvent(LoginIntent.OnPasswordChange(password))
                     },
                     label = { Text(stringResource(string.login_registration_login_password_label)) })
-                Spacer(Modifier.height(20.dp))
+                Spacer(Modifier.height(Dimensions.spacing20))
                 OutlinedButton(onClick = {
                         onEvent(LoginIntent.OnLoginWithCredentials)
                 }) {
