@@ -13,7 +13,9 @@ struct GroupsFilter: View {
         HStack(spacing: 0) {
             GroupsFilterButton()
             Spacer()
-            NewGroupButton()
+            NavigationLink(destination: NewGroupScreen()) {
+                NewGroupButton()
+            }
         }
         .frame(maxWidth: .infinity)
     }
