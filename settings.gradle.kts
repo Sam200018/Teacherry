@@ -31,6 +31,7 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":composeApp:features:login-registration")
 include(":composeApp:features:home")
+include(":composeApp:features:groups")
 include(":composeApp:shared_resources")
 include(":shared")
 include(":shared:features:login-registration:data")

@@ -12,14 +12,16 @@ struct HomeScreen: View {
     var name: String = "Sam"
     
     var body: some View {
-        ScrollView {
+        NavigationView {
+            ScrollView {
            TopBarTitle(name: name)
             GroupsFilter()
             ForEach(0..<4) { _ in
                 GroupItemView()
             }
             ListEnd()
-        }.padding(24)
+            }.padding(24)
+        }
     }
 }
 

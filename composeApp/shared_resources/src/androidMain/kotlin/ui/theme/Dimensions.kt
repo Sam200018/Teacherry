@@ -7,11 +7,18 @@ import androidx.compose.ui.unit.dp
 @Immutable
 object Dimensions {
 
+    val spacing4: Dp = 4.dp
     val spacing8: Dp = 8.dp
+    val spacing12: Dp = 12.dp
     val spacing16: Dp = 16.dp
     val spacing20: Dp = 20.dp
     val spacing24: Dp = 24.dp
     val spacing32: Dp = 32.dp
+    val spacing36: Dp = 36.dp
     val spacing40: Dp = 40.dp
+    val spacing56: Dp = 56.dp
+    val spacing60: Dp = 60.dp
+    val spacing72: Dp = 72.dp
     val spacing96: Dp = 96.dp
+    val spacing200: Dp = 200.dp
 }

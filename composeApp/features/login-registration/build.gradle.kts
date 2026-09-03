@@ -23,6 +23,8 @@ kotlin {
             implementation(libs.bundles.composeBasics)
             implementation(libs.bundles.viewModel)
             implementation(libs.bundles.koin)
+            implementation(project(":shared:features:login-registration:domain"))
+            implementation(project(":shared:features:login-registration:presentation"))
         }
     }
 }

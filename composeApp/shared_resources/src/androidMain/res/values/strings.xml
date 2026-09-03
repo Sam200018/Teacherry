@@ -17,4 +17,15 @@
     <string  name="home_screen_group_enter_label">Entrar</string>
     <string  name="home_screen_groups_list_end">Deslice hacia abajo para actualizar la lista</string>
 
+<!--New group screen-->
+    <string name="new_screen_header_title">Nuevo Grupo</string>
+    <string name="new_screen_header_subtitle">Configura tu clase</string>
+    <string name="new_screen_description">Ingresa los detalles para comenzar a gestionar\n tus alumnos.</string>
+    <string name="new_screen_group_name_label">Nombre del Grupo</string>
+    <string name="new_screen_group_name_placeholder">ej. Grupo A, Los Alebrijes</string>
+    <string name="new_screen_group_level_label">Grado Escolar</string>
+    <string name="new_screen_group_level_placeholder">Selecciona el grado</string>
+    <string name="new_screen_group_info_text">Al crear el grupo, podrás importar tu lista de alumnos y comenzar a registrar asistencias y evaluaciones diarias.</string>"
+    <string name="new_screen_group_create_cta_label">Crear Grupo</string>"
+
 </resources>
