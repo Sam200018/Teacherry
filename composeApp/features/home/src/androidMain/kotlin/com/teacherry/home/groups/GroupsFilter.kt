@@ -1,5 +1,6 @@
 package com.teacherry.home.groups
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,13 +28,14 @@ import ui.theme.Dimensions
  * customize sizing, padding or click handling.
  *
  * @param modifier Modifier to be applied to the root [Row]. Defaults to [Modifier].
+ * @param onNewGroupClick Callback triggered when the "New group" action is clicked.
  */
 @Composable
-fun GroupsFilter(modifier: Modifier = Modifier) {
+fun GroupsFilter(modifier: Modifier = Modifier, onNewGroupClick: () -> Unit = {}) {
     Row(modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         GroupsFilterButton()
         Spacer(modifier = Modifier.weight(1f))
-        NewGroupButton()
+        NewGroupButton(modifier = Modifier.clickable { onNewGroupClick() })
     }
 }
 
@@ -69,8 +71,8 @@ private fun GroupsFilterButton(modifier: Modifier = Modifier) {
  * followed by the localized "New group" label.
  */
 @Composable
-private fun NewGroupButton() {
-    Row {
+private fun NewGroupButton(modifier: Modifier = Modifier) {
+    Row(modifier = modifier) {
         Icon(
             Icons.Outlined.AddCircle,
             contentDescription = stringResource(R.string.home_screen_new_group),

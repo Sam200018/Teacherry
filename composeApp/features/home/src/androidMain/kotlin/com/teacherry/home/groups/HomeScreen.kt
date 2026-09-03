@@ -15,13 +15,13 @@ import com.teacherry.sharedresources.R
 import ui.theme.Dimensions
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(modifier: Modifier = Modifier, onNewGroupClick: () -> Unit = {}) {
     LazyColumn(modifier.padding(horizontal = Dimensions.spacing24)) {
         item {
             TopBarTitle(name = "Samuel Bautista")
         }
         item {
-            GroupsFilter()
+            GroupsFilter(onNewGroupClick = onNewGroupClick)
         }
         // TODO: update with the actual list of items
         items (4) {
