@@ -18,8 +18,9 @@ kotlin = "2.3.20"
 kotlinx-coroutines = "1.10.1"
 coil = "3.4.0"
 koin-bom = "4.1.1"
-material3 = "1.4.0"
+material3 = "1.9.0"
 material-icons = "1.7.8"
+navigation-compose = "2.7.7"
 
 # Compose / multiplatform
 composeMultiplatform = "1.10.0"
@@ -43,6 +44,7 @@ androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmode
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-fundation = {module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
+navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
 
 # Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
